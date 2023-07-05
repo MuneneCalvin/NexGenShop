@@ -1,27 +1,28 @@
 {
-  "name": "backend",
+  "name": "ecomern-yt-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "engines": {
     "node": ">=19.0.1"
   },
   "scripts": {
-    "start": "nodemon server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "nodemon server.js"
   },
   "keywords": [],
-  "author": "Shawn Calvin",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.0",
-    "body-parser": "^1.20.2",
+    "bcrypt": "^5.0.1",
+    "cloudinary": "^1.30.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.3.1",
-    "nodemon": "^2.0.22"
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.5",
+    "nodemon": "^2.0.22",
+    "socket.io": "^4.5.1",
+    "stripe": "^9.6.0",
+    "validator": "^13.7.0"
   }
 }
