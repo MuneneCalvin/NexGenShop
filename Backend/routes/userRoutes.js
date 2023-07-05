@@ -1,23 +1,21 @@
-const router = require('express').Router();
-const User = require('../models/User.js');
-const Order = require('../models/Order.js');
+import { User } from '../models/User.js';
+import express from 'express';
+import router from 'express';
 
-// signup
-router.post('/signup', async(req, res)=> {
+// Registering a user
+export const registerUser = async(req, res)=> {
   const {name, email, password} = req.body;
 
   try {
     const user = await User.create({name, email, password});
     res.json(user);
   } catch (e) {
-    if(e.code === 11000) return res.status(400).send('Email already exists');
-    res.status(400).send(e.message)
+    if (e.code === 11000) return res.status(400).send('Email already exists');
   }
-})
+}
 
-// login
-
-router.post('/login', async(req, res) => {
+// Login a user
+export const loginUser = async(req, res) => {
   const {email, password} = req.body;
   try {
     const user = await User.findByCredentials(email, password);
@@ -25,22 +23,20 @@ router.post('/login', async(req, res) => {
   } catch (e) {
     res.status(400).send(e.message)
   }
-})
+}
 
-// get users;
-
-router.get('/', async(req, res)=> {
+// Get all users
+export const getUsers = async(req, res)=> {
   try {
     const users = await User.find({ isAdmin: false }).populate('orders');
     res.json(users);
   } catch (e) {
     res.status(400).send(e.message);
   }
-})
+}
 
-// get user orders
-
-router.get('/:id/orders', async (req, res)=> {
+// Get user orders
+export const getUserOrders = async (req, res)=> {
   const {id} = req.params;
   try {
     const user = await User.findById(id).populate('orders');
@@ -48,9 +44,10 @@ router.get('/:id/orders', async (req, res)=> {
   } catch (e) {
     res.status(400).send(e.message);
   }
-})
-// update user notifcations
-router.post('/:id/updateNotifications', async(req, res)=> {
+}
+
+// Update user notifcations
+export const updateNotifications = async(req, res)=> {
   const {id} = req.params;
   try {
     const user = await User.findById(id);
@@ -63,6 +60,6 @@ router.post('/:id/updateNotifications', async(req, res)=> {
   } catch (e) {
     res.status(400).send(e.message)
   }
-})
+}
 
-module.exports = router;
+export default router;
