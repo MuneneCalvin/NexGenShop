@@ -9,7 +9,7 @@ This project will run on **ReactJs**. Project is open for suggestions, bug repor
 
 ## Features
 
-- ReacJs Templates
+- ReactJs Templates
 - ES6 Syntax
 - Light-weight project
 - Seamless cart
