@@ -1,9 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { useState } from 'react';
+import StripeCheckout from "react-stripe-checkout";
 import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import './cart.css'
+
+
 const Cart = ({cart, setCart}) => {
-    // increace qty
+    const [stripeToken, setStripeToken] = useState(null);
+    const onToken = (token) => {
+        setStripeToken(token);
+    }
+
+
+    // increase qty
     const incqty = (product) => 
     {
         const exsit = cart.find((x) => 
@@ -45,6 +55,7 @@ const Cart = ({cart, setCart}) => {
     }
     // Total price
     const Totalprice = cart.reduce((price, item) => price + item.qty * item.Price, 0)
+
   return (
     <>
     <div className='cartcontainer'>
@@ -87,8 +98,20 @@ const Cart = ({cart, setCart}) => {
         {
             cart.length > 0 &&
             <>
+            <div className='stripe'>
+            <StripeCheckout
+                stripeKey = 'pk_test_51NQcAxCacqDo7Bdys0wHNIUC1y4rfoLTOXFQWzvcBvGT2tyCSE2WUPtTsX6BsusQQqYCVjG8ggODF8igVfKKVyrk00SMkhmDnk'
+                token = {onToken}
+                billingAddress
+                shippingAddress
+                amount = {Totalprice * 100}
+                name = 'ShopFy'
+                image = 'https://i.ibb.co/0s3pdnc/Shop-Fy.png'
+            >
             <h2 className='totalprice'>total: $ {Totalprice}</h2>
             <button className='checkout'>Checkout</button>
+            </StripeCheckout>
+            </div>
             </>
         }
     </div>

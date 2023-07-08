@@ -15,7 +15,7 @@ const Footer = () => {
                     <img src = {logo} alt='logo'></img>
                 </div>
                 <div className='detail'>
-                    <p>We are a team of designers and developers that create high quality WordPress</p>
+                    <p>We are a team of designers and developers that create high quality Websites</p>
                     <div className='icon'>
                         <li><RiFacebookFill /></li>
                         <li><AiOutlineInstagram /></li>
