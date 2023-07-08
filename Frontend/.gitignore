@@ -1,0 +1,4 @@
+# Files not to push to github
+*.pyc
+node_modules
+.env
