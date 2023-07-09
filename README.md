@@ -5,7 +5,6 @@ An  Full Stack e-commerce site template built with ReactJs, Styled-Component.
 ## Getting started
 
 This project will run on **ReactJs**. Project is open for suggestions, bug reports and pull requests.
-<!-- This project will run on **ReactJs** as frontend **Express** as a backend server using **MongoDB** as database. Project is open for suggestions, bug reports and pull requests. [INTEGROWEAR](https://integrowears.herokuapp.com/ 'INTEGROWEAR ')- -->
 
 ## Features
 
@@ -49,7 +48,7 @@ This project is open-sourced software licensed under the MIT License. See the LI
 
 ## Support & Feedbacks
 
-- [LinkedIN](https://www.linkedin.com/in/calvin-munene/ 'Linkedin') - Calvin mwangi
-- [Twitter](https://www.twitter.com/Shawn_Cal_ 'Twitter') - Shawn
+- [LinkedIn](https://www.linkedin.com/in/calvin-munene/ 'Linkedin') - Calvin mwangi
+- [Twitter](https://www.twitter.com/Shawn_Cal_ 'Twitter') - Shawn_Cal
 - [Github](https://github.com/MuneneCalvin 'Github') - Calvin mwangi
-- [Website](https://munenecal.netlify.app/, 'Website') - Shawn
+- [Website](https://munenecal.netlify.app/, 'Website') - Calvin Shawn
